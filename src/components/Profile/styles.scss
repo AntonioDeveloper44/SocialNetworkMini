@@ -1,0 +1,34 @@
+.profile {
+
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+
+  &__user{
+    margin: 40px 20px;
+
+    justify-content: center;
+    align-items: center;
+    width:100%
+  }
+
+  .user {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid black;
+    width:100%;
+    max-width: 200px;
+
+    &__avatar {
+
+      border: 1px solid black;
+      width: 100%;
+      min-height: 200px;
+    }
+  }
+
+}

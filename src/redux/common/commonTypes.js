@@ -1,0 +1,2 @@
+export const TOGGLE_MODAL = 'LOGIN/TOGGLE_MODAL'
+
