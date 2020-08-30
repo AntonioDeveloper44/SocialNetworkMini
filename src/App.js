@@ -7,11 +7,14 @@ import {Profile} from "./components/Profile/Profile";
 import {Posts} from "./components/Posts/Posts";
 import {SignUp} from "./components/SignUp/SignUp";
 import {SignUpSuccess} from "./components/SignUpSuccess/SignUp";
+import {MyPosts} from "./components/MyPosts/MyPosts";
+import {Settings} from "./components/Settings/Settings";
 
 //Styles
 import 'antd/dist/antd.css';
 import './styles.scss'
 import {useSelector} from "react-redux";
+import ChangePostForm from "./components/ChangePostForm/ChangePostForm";
 
 
 const App = () => {
@@ -23,14 +26,19 @@ const App = () => {
                 <NavBar/>
 
                 {isLogin && <>
-                <Route path='/profile' render={() => <Profile/>} exact/>
-                <Redirect to="/profile"/>
+                    <Route path='/profile' render={() => <Profile/>} exact/>
+                    <Redirect to="/profile"/>
 
-                </> }
+                </>}
 
-                <Route exact path='/success' render={() => <SignUpSuccess/>} />
-                <Route path='/posts' render={() => <Posts/>} />
-                <Route path='/signup' render={() => <SignUp/>} />
+                <Route path='/success' render={() => <SignUpSuccess/>}/>
+                <Route path='/posts' render={() => <Posts/>}/>
+                <Route path='/signup' render={() => <SignUp/>}/>
+                <Route path='/settings' render={() => <Settings/>}/>
+                <Route path='/my-posts' render={() => <MyPosts/>}/>
+
+                <Route path='/edit-post/:postId(\d+)' render={() => <ChangePostForm/>}/>
+
 
             </div>
         </div>

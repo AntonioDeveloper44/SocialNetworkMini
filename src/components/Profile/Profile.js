@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
-import './styles.scss'
 import {useDispatch, useSelector} from "react-redux";
 
-import {getCurrentUserByToken} from "../../redux/auth/authActions";
 import PostForm from "../PostForm/PostForm";
+import { getCurrentUserByToken } from "../../redux/auth/authActions";
 
+import './styles.scss'
 
 
 export const Profile = () => {
@@ -13,9 +13,9 @@ export const Profile = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-       dispatch(getCurrentUserByToken());
+        dispatch(getCurrentUserByToken())
     }, [dispatch]);
-    // console.log(authUser)
+
 
     return (
         <div className="profile">
@@ -27,8 +27,7 @@ export const Profile = () => {
                     <div className="user__name">{authUser.email}</div>
                 </div>
             </div>
-            <PostForm />
-
+            <PostForm/>
         </div>
     )
 }

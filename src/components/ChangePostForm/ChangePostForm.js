@@ -1,21 +1,21 @@
 import React from "react";
-import {useDispatch} from "react-redux";
-import {setPostToServer} from "../../redux/posts/postsActions";
+import {useDispatch, useSelector} from "react-redux";
+import { updatePostById} from "../../redux/posts/postsActions";
 import {  Form, Input, Button, } from 'antd';
 import './syles.scss'
 
 
-const PostForm = () => {
 
+const ChangePostForm = (postId) => {
 
+    // const post = useSelector(state => state.posts.posts)
     const dispatch = useDispatch()
 
     return (
         <div className="form">
             <Form
                 name="createPost"
-                onFinish={ values  => dispatch(setPostToServer(values)) }
-
+                onFinish={ values  => dispatch(updatePostById(postId , values)) }
                 // onFinishFailed={onFinishFailed}
             >
                 <Form.Item
@@ -45,4 +45,4 @@ const PostForm = () => {
     )
 }
 
-export default PostForm
+export default ChangePostForm

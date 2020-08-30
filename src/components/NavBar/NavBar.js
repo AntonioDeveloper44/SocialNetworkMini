@@ -15,14 +15,20 @@ export const NavBar = () => {
             }
 
             <div className="navBar__item">
-                <NavLink to='/posts'>Posts</NavLink>
+                <NavLink to='/posts'>POSTS</NavLink>
             </div>
 
-            {/*{isLogin &&*/}
-            {/*<div className="navBar__item">*/}
-            {/*    <NavLink to='/settings'>Settings</NavLink>*/}
-            {/*</div>*/}
-            {/*}*/}
+            {isLogin &&
+            <div className="navBar__item">
+                <NavLink to='/settings'>Settings</NavLink>
+            </div>
+            }
+
+            {isLogin &&
+            <div className="navBar__item">
+                <NavLink to='/my-posts'>MY POSTS</NavLink>
+            </div>
+            }
 
         </nav>
     )
