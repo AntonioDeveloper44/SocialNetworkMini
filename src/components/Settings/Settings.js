@@ -16,9 +16,7 @@ export const Settings = () => {
     const props = {
         name: 'file',
         action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-        headers: {
-            authorization: 'authorization-text',
-        },
+
         onChange(info) {
             if (info.file.status !== 'uploading') {
                 console.log(info.file, info.fileList);
@@ -36,7 +34,11 @@ export const Settings = () => {
     const handleSubmit = event => {
         event.preventDefault();
 
+        // const formData = new FormData();
+        // formData.append('file', props.file)
+
         dispatch(putUserAvatar())
+
     };
 
     return (

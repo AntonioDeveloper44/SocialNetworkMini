@@ -1,17 +1,21 @@
-import {PUT_AVATAR} from './userTypes'
+import { GET_ALL_USERS, PUT_AVATAR } from "./userTypes";
 
 const initialState = {
-    avatar: ''
-}
+  avatar: "",
+  users: [],
+};
 
 const userReducer = (state = initialState, action) => {
-    switch (action.type) {
+  switch (action.type) {
+    case PUT_AVATAR:
+      return { ...state, avatar: action.data };
 
-        case PUT_AVATAR:
-            return {...state, avatar: action.data }
+    case GET_ALL_USERS:
+      return { ...state, users: action.data };
 
-        default:  return state
-    }
-}
+    default:
+      return state;
+  }
+};
 
 export default userReducer;

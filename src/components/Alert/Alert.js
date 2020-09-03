@@ -1,8 +1,7 @@
-import React from "react";
-import { Alert } from 'antd';
+import React from 'react';
 
-export const Alert = ({text}) => (
-    <Alert>
-        {text}
-    </Alert>
-)
+export const Alert = ({ text }) => (
+  <div className="alert alert-warning" role="alert">
+    {text}
+  </div>
+);

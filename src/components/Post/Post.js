@@ -6,12 +6,7 @@ import {deletePostById} from "../../redux/posts/postsActions";
 import {useHistory} from "react-router-dom";
 
 export default ({post , dispatch , ifMyPost }) => {
-
     const history = useHistory();
-    const routeChange = () => {
-        let path = `edit-post`;
-        history.push(path);
-    }
 
     return (
         <div className="card">
@@ -25,7 +20,12 @@ export default ({post , dispatch , ifMyPost }) => {
                 <div className="post-button">
                 {ifMyPost && <Button type="primary" danger key={post._id} onClick={() => dispatch(deletePostById(post._id))}>Delete</Button>}
                 {/*onClick должен вызвать скрытую форму или модалку, в которой будут values отправляться в updatePostById*/}
-                {ifMyPost && <Button type="secondary" onClick={() => routeChange() }>Edit</Button>}
+                {ifMyPost && <Button
+                    type="secondary"
+                    onClick={() => history.push(`edit-post/${post._id}`)}
+                >
+                    Edit
+                </Button>}
                 {/*    dispatch(updatePostById(post._id , values))*/}
                 </div>
 
