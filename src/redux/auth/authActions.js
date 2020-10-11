@@ -15,7 +15,7 @@ export function loginUserToServer(values) {
         dispatch(setToken(response.data));
 
         // isLogin = useSelector(state => state.auth.isLogin)
-        //if(values.remeber) {localStorage.setItem...}
+        //if(values.remember) {localStorage.setItem...}
         // я не притягиваю галочку ремембер ми в сторедж, просто если она приходит - засовіваю токен в локал сторедж
         values.remember && localStorage.setItem('token', response.data.token);
 

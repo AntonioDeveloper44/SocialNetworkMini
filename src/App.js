@@ -18,6 +18,8 @@ import './styles.scss';
 import { useSelector } from 'react-redux';
 import { Toasts } from './components/TOASTS/Toasts';
 
+import { SuperAdminLayout } from './components/SuperAdmin';
+
 const App = () => {
   const isLogin = useSelector((state) => state.auth.token);
 
@@ -36,6 +38,8 @@ const App = () => {
         <Route path="/my-posts" render={() => <MyPosts />} />
         <Route path="/users/" render={() => <Users />} />
         <Route path="/toasts" render={() => <Toasts />} />
+
+        <Route path="/super-admin" render={() => <SuperAdminLayout />} />
 
         <Route
           path="/edit-post/:postId"

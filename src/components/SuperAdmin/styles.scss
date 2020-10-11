@@ -1,0 +1,29 @@
+.create-template{
+  max-width: 100vw;
+  width: 100%;
+
+  &__content{
+    display: flex;
+    padding: 30px 16px;
+    min-height: 100vh;
+
+    .sa__navbar{
+      display:flex;
+      flex-direction: column;
+
+      width: 100%;
+      max-width: 200px;
+      &__item{
+        padding: 10px;
+      }
+    }
+    .sa__content{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+}
+
+
